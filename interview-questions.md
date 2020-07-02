@@ -111,4 +111,5 @@ Yarn is a package manager that doubles down as a project manager. You can organi
 - React State - 
 I honestly couldn't comprehend what I was reading but I think React State but I think it has to do with updating a component's state within the React library.
 
-- this
+- this -
+In Javascript "this" is a keyword that refers to the object that it belongs to. I think it has to do with DOM manipulation or OOP because it refers to an object. It can be used on methods like call() and apply().
