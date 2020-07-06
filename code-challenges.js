@@ -9,6 +9,7 @@
 var temp1 = 35
 var temp2 = 350
 var temp3 = 212
+var temp4 = "miguel"
 
 //creating a function that passes an argument of temp that will contain our logic
 const willItBoil = (temp) => {
@@ -20,13 +21,17 @@ const willItBoil = (temp) => {
     } else if (temp < 212) {
         return `${temp} is below boiling point.`;
     //if it is neither above or below, it is right at the boiling point and returns the result.
-    } else {
+    } else if ( temp === 212) {
         return `${temp} is at boiling point.`;
-        
+    } else {
+        return "That is not a valid number"
     }
 }
 //pass desired temp as an argument.
-console.log(willItBoil(temp3));
+// console.log(willItBoil(temp1));
+// console.log(willItBoil(temp2));
+// console.log(willItBoil(temp3));
+// console.log(willItBoil(temp4));
 
 
 
@@ -40,7 +45,7 @@ const multiplier = (array) => {
     //create an empty array to store out multiplied numbers
     let multArray = []
     //create a for loop that iterates throughout the whole length of the array.
-    for (i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         //create a variable to store our multiplied number
         let tempNum = array[i] * 5;
         //push the multiplied number into our multiplied array.
@@ -50,7 +55,7 @@ const multiplier = (array) => {
     return multArray;
 }
 //pass desired array as an argument.
-console.log(multiplier(myNumbers1));
+// console.log(multiplier(myNumbers1));
 
 
 // --------------------3) Create a function that multiplies each number in the array by 5 using map.
@@ -66,7 +71,7 @@ const mapMultiply = (array) => {
     return multi5
 }
 //pass the array through here
-console.log(mapMultiply(myNumbers2));
+// console.log(mapMultiply(myNumbers2));
 
 
 
@@ -88,7 +93,7 @@ const iNeedThis = (array) => {
     return oddIndexes
 }
 
-console.log(iNeedThis(coffeeRun));
+// console.log(iNeedThis(coffeeRun));
 
 
 
@@ -115,24 +120,33 @@ const noVowels = (string) => {
     return nVwls
 }
 //call the function and enter argument here.
-console.log(noVowels(stringWithVowels2));
+// console.log(noVowels(stringWithVowels1));
+// console.log(noVowels(stringWithVowels2));
 
-//IGNORE BELOW IGNORE BELOW
-//might come back to this if I have time.
-// //maybe use filter()? need to turn string into array, filter vowels, then join again.
+//IGNORE BELOW IGNORE BELOW IGNORE BELOW IGNORE BELOW
+//following along with the class on this block of code, alternate way of solving problem
 
-// //create a function
-// const noVowels = (string) => {
-//     //create an empty array so we can split the string into individual chars.
-//     let strArray = string.split("")
-//     //use filter method and create a conditional that banishes the vowels.
-//     strArray.filter(value => {
-//         if (value === "a" || value === "e" || value === "i" || value === "o" || value === "u")
-//         return value
-//     })
-//     return strArray
+const noVowelsPlease = (string) => {
+    let vowelArray = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+    let charArr = string.split("")
+    let noVowelArray = charArr.filter((value, index) => {
+        let isValue = true
+        return isValue !== vowelArray.includes(charArr[index])
+    })
+let noVowelString = noVowelArray.join("")
+return noVowelString
+}
+// console.log(noVowelsPlease(stringWithVowels1));
+// console.log(noVowelsPlease(stringWithVowels2));
+
+// const zeroVowels = (str) => {
+//     let arrayVowel = str.split("")
+//     arrayVowel.filter(value =>{
+//         value != "a" &&
+//     }).join("")
 // }
-//IGNORE ABOVE IGNORE ABOVE
+
+//IGNORE ABOVE IGNORE ABOVE IGNORE ABOVE IGNORE ABOVE
 
 
 // --------------------6) Expand the logic from #5 to inform your user if the variable passed into the vowel removal function is not a string.
@@ -154,4 +168,17 @@ const noVowelsExpanded = (string) => {
     }
 }
 //call the function and enter argument here.
-console.log(noVowelsExpanded(stringWithVowels5));
+// console.log(noVowelsExpanded(stringWithVowels3));
+// console.log(noVowelsExpanded(stringWithVowels4));
+// console.log(noVowelsExpanded(stringWithVowels5));
+
+//IGNORE BELOW IGNORE BELOW 
+// const noVowelsPlease = (string) => {
+//     let vowelArray = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+//     let charArr = string.split("")
+//     let noVowelArray = charArr.filter((value, index) => {
+//         let isValue = true
+//         return isValue !== vowelArray.includes(charArr[index])
+//     })
+// let noVowelString = noVowelArray.join("")
+// return noVowelString
